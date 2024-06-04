@@ -22,7 +22,7 @@ function Table({ tableConfig }) {
               let cellProps = cell.headerProps || {};
               let { sx, ...otherProps } = cellProps;
               return (
-                <TableCell key={`th_${index}`} sx={{ fontWeight: "bold", ...sx }} {...otherProps}>
+                <TableCell key={`th_${index}`} variant="header" {...otherProps}>
                   {value}
                 </TableCell>
               );

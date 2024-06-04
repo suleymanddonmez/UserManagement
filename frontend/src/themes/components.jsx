@@ -98,14 +98,41 @@ const components = {
       }),
     },
   },
-  MuiBox: {
-    root: ({ theme, ownerState }) => ({
-      flexGrow: 1,
-      p: 3,
-      ...(ownerState.open && {
-        display: "none",
+  MuiTable: {
+    defaultProps: {
+      stickyHeader: true,
+      size: "medium",
+    },
+  },
+  MuiTableHead: {
+    styleOverrides: {
+      root: ({ theme, ownerState }) => ({
+        backgroundColor: theme.palette.primary.light,
+        color: theme.palette.primary.contrastText,
       }),
-    }),
+    },
+  },
+  MuiTableRow: {
+    styleOverrides: {
+      root: ({ theme, ownerState }) => ({
+        "&:nth-of-type(odd)": {
+          backgroundColor: theme.palette.action.hover,
+        },
+        // hide last border
+        "&:last-child td, &:last-child th": {
+          border: 0,
+        },
+      }),
+    },
+  },
+  MuiTableCell: {
+    styleOverrides: {
+      root: ({ theme, ownerState }) => ({
+        ...(ownerState.variant === "header" && {
+          fontWeight: "bold",
+        }),
+      }),
+    },
   },
 };
 

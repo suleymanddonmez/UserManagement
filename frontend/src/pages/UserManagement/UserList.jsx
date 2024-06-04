@@ -32,9 +32,10 @@ function UserList() {
       displayName: {
         text: "İsim Soyisim",
         headerProps: {
-          sx: {
-            color: "blue"
-          }
+          // sx: {
+          //   color: "blue"
+          // }
+          color: "primary"
         },
         props: {
           sx: {
