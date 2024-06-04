@@ -4,12 +4,12 @@ import MenuList from "../utils/Menu";
 export const menuSlice = createSlice({
   name: "menu",
   initialState: {
-    active: "home",
+    activeId: "home",
     items: MenuList,
   },
   reducers: {
     setActive: (state, action) => {
-      state.active = action.payload;
+      state.activeId = action.payload;
     },
   },
 });
@@ -17,6 +17,6 @@ export const menuSlice = createSlice({
 export const { setActive } = menuSlice.actions;
 
 export const items = (state) => state.menu.items;
-export const activeItem = (state) => state.menu.active;
+export const activeItem = (state) => state.menu.items.find((i) => i.id == state.menu.activeId);
 
 export default menuSlice.reducer;

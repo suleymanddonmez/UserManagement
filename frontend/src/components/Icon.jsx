@@ -5,7 +5,7 @@ import { CircularProgress } from "@mui/material";
 const loadIcon = (iconName) => {
   return lazy(() =>
     import("@mui/icons-material").then((module) => ({
-      default: module[iconName],
+      default: module?.[iconName] || module.HelpOutline,
     }))
   );
 };

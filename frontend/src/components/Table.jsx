@@ -19,8 +19,10 @@ function Table({ tableConfig }) {
             {keys.map((key, index) => {
               let cell = row[key] || {};
               let value = cell.text;
+              let cellProps = cell.headerProps || {};
+              let { sx, ...otherProps } = cellProps;
               return (
-                <TableCell key={`th_${index}`} sx={{ fontWeight: "bold" }} {...cell.headerProps}>
+                <TableCell key={`th_${index}`} sx={{ fontWeight: "bold", ...sx }} {...otherProps}>
                   {value}
                 </TableCell>
               );
@@ -33,8 +35,10 @@ function Table({ tableConfig }) {
               {keys.map((key, index) => {
                 let cell = row[key] || {};
                 let value = rowData[key] || "-";
+                let cellProps = cell.props || {};
+                let { sx, ...otherProps } = cellProps;
                 return (
-                  <TableCell key={`td_${index}`} {...cell.props}>
+                  <TableCell key={`td_${index}`} sx={sx} {...otherProps}>
                     {value}
                   </TableCell>
                 );

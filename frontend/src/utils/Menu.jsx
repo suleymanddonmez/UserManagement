@@ -1,9 +1,3 @@
-import React from "react";
-
-// metarial-icons
-import HomeIcon from "@mui/icons-material/Home";
-import RecentActorsIcon from '@mui/icons-material/RecentActors';
-
 const Menu = [
   {
     id: "home",

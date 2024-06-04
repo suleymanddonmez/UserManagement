@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 // material-ui
 import { styled, useTheme } from "@mui/material/styles";
-import MuiAppBar from "@mui/material/AppBar";
+import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
@@ -14,40 +14,21 @@ import IconButtonMenu from "../components/IconButtonMenu";
 
 //react-redux
 import { useSelector, useDispatch } from "react-redux";
-import { toggle as sidebarToggle, width as sidebarWidth, open as sidebarOpen } from "../store/SidebarSlice";
+import { toggle as sidebarToggle, open as sidebarOpen } from "../store/SidebarSlice";
 import { userInfo, logout } from "../store/UserSlice";
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open, width }) => ({
-  zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(["width", "margin"], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    marginLeft: width,
-    width: `calc(100% - ${width}px)`,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-}));
 
 function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   //sidebar
-  const drawerWidth = useSelector(sidebarWidth);
   const drawerOpen = useSelector(sidebarOpen);
 
   //user
   const activeUserInfo = useSelector(userInfo);
 
   return (
-    <AppBar position="fixed" open={drawerOpen} width={drawerWidth}>
+    <AppBar position="fixed" open={drawerOpen}>
       <Toolbar>
         <IconButton
           color="inherit"
@@ -56,7 +37,6 @@ function Header() {
           edge="start"
           sx={{
             marginRight: 5,
-            ...(drawerOpen && { display: "none" }),
           }}
         >
           <Icon iconName={"Menu"} />
