@@ -1,7 +1,7 @@
-**Proje Adı: Kullanıcı Yönetim Paneli**
-
 **Ön Bilgilendirme:**
-Bu proje geliştirme aşamasındadır. Proje tanıtımı aşağıdaki gibidir
+Bu proje geliştirme aşamasındadır. Proje tanıtımı aşağıdaki gibidir:
+
+**Proje Adı: Kullanıcı Yönetim Paneli**
 
 **Açıklama:**
 Bu proje, kullanıcı yönetimi ve yetkilendirme işlevselliğini sağlayan bir web uygulaması geliştirmeyi amaçlar. Modern web teknolojileri kullanılarak oluşturulan bu uygulama, kullanıcıların sistemdeki rollerini ve erişim haklarını yönetmelerini kolaylaştırır. React, Redux, ve MUI gibi önemli araçlarla oluşturulan kullanıcı dostu bir arayüz sunar. Backend kısmı ise Node.js ve PostgreSQL kullanılarak geliştirilmiş olup, güvenli ve ölçeklenebilir bir altyapı sağlar.
