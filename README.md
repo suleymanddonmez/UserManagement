@@ -1,7 +1,10 @@
 **Proje Adı: Kullanıcı Yönetim Paneli**
 
+**Ön Bilgilendirme:**
+Bu proje geliştirme aşamasındadır. Proje tanıtımı aşağıdaki gibidir
+
 **Açıklama:**
-Kullanıcı Yönetim Paneli, modern web teknolojileriyle geliştirilmiş, güvenli ve esnek bir kullanıcı yönetim çözümüdür. React, Redux, ve MUI gibi güçlü araçlarla oluşturulan bu proje, kullanıcıların yetkilendirme ve erişim kontrolü ihtiyaçlarını karşılamak üzere tasarlanmıştır. Ayrıca Node.js ile geliştirilen backend kısmı, PostgreSQL veritabanıyla entegre edilerek sağlam bir altyapı sunar.
+Bu proje, kullanıcı yönetimi ve yetkilendirme işlevselliğini sağlayan bir web uygulaması geliştirmeyi amaçlar. Modern web teknolojileri kullanılarak oluşturulan bu uygulama, kullanıcıların sistemdeki rollerini ve erişim haklarını yönetmelerini kolaylaştırır. React, Redux, ve MUI gibi önemli araçlarla oluşturulan kullanıcı dostu bir arayüz sunar. Backend kısmı ise Node.js ve PostgreSQL kullanılarak geliştirilmiş olup, güvenli ve ölçeklenebilir bir altyapı sağlar.
 
 **Özellikler:**
 
@@ -24,27 +27,27 @@ Kullanıcı Yönetim Paneli, modern web teknolojileriyle geliştirilmiş, güven
    - MUI ile özelleştirilebilir bileşenlerle zengin ve etkileşimli deneyim.
    - Kullanıcıların kolayca gezinmesini ve işlemlerini gerçekleştirmesini sağlayacak sezgisel arayüz.
 
-**Teknoloji Yığını:**
+**Teknik Özellikler:**
 
 - **Frontend:**
-  - React: Kullanıcı arayüzü geliştirmek için temel kütüphane.
-  - Redux: Durum yönetimi ve uygulama genelinde veri saklama.
-  - MUI (Material-UI): Modern ve şık kullanıcı arayüzü bileşenleri.
+  - React: Kullanıcı arayüzü (UI) bileşenlerini oluşturmak ve yönetmek için kullanılır.
+  - Redux: Uygulama genelindeki durum yönetimi için kullanılır. Kullanıcı bilgileri, yetki durumu vb. gibi verilerin depolanmasını sağlar.
+  - MUI (Material-UI): Modern ve özelleştirilebilir kullanıcı arayüzü bileşenleri sağlar.
   - Vite: Hızlı ve optimize edilmiş bir geliştirme ortamı sağlar.
 
 - **Backend:**
-  - Node.js: Hızlı ve ölçeklenebilir backend geliştirmek için.
-  - PostgreSQL: Güvenilir ilişkisel veritabanı yönetimi için.
-  - Express.js: Web uygulamaları oluşturmak için hafif ve esnek bir framework.
+  - Node.js: Hızlı ve etkili bir şekilde backend mantığını oluşturmak için kullanılır.
+  - Express.js: Web uygulamaları geliştirmek için minimalist ve esnek bir web framework'üdür.
+  - PostgreSQL: İlişkisel veritabanı yönetimi için tercih edilen açık kaynaklı bir çözümdür.
 
-**Projenin Faydaları:**
+- **Kimlik Doğrulama ve Yetkilendirme:**
+  - JWT (JSON Web Token): Kullanıcı kimlik doğrulaması ve yetkilendirme için kullanılır. Güvenli bir oturum yönetimi sağlar.
+  - Kullanıcı Yetkileri ve Grupları: Kullanıcıların yetki seviyeleri ve yetki grupları, PostgreSQL veritabanında tutulur.
 
-- **Esneklik ve Özelleştirme:** Projeyi kolayca özelleştirebilir ve genişletebilirsiniz, böylece özel iş gereksinimlerinize uyacak şekilde uyarlayabilirsiniz.
-- **Güvenlik:** Modern güvenlik standartları ve uygulama katmanı güvenliği ile kullanıcı verilerinin korunmasını sağlar.
-- **Performans ve Verimlilik:** Hızlı bir geliştirme ortamı ve optimize edilmiş frontend ve backend sayesinde kullanıcılarınıza yüksek performanslı bir deneyim sunar.
+- **Güvenlik:**
+  - Şifreleme: Hassas verilerin güvenliği için uygun şifreleme algoritmaları kullanılır.
+  - Salting: Kullanıcı şifrelerinin güvenliği için salt kullanımı.
 
-Kullanıcı Yönetim Paneli, işletmenizin veya projenizin ihtiyaçlarını karşılamak için kapsamlı bir çözüm sunar. Verimliliği artırırken, güvenliği ve esnekliği de garanti eder.
+**Teknik Özellikler:**
 
----
-
-Bu açıklama, projenizin temel özelliklerini ve faydalarını vurgulayarak potansiyel kullanıcıların ilgisini çekebilir.
+Proje, frontend ve backend olmak üzere iki ana bileşene sahiptir. Kurulum talimatları bileşenlerin kendi README dosyasında ayrıntılı olarak belirtilmiştir.
