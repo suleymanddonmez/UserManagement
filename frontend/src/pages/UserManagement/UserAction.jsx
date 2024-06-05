@@ -1,5 +1,11 @@
 import React from "react";
-import { Button, Grid, Icon } from "@mui/material";
+
+//material-ui
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+
+//components
+import Icon from "../../components/Icon";
 import Form, { FormInput } from "../../components/Form";
 
 const formTypes = {
