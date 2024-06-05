@@ -11,6 +11,7 @@ const Menu = [
     id: "user-management",
     iconName: "RecentActors",
     text: "Kullanıcı Yönetimi",
+    subText: "Kullanıcıların yönetimi yapılır",
     type: "link",
     link: "/user-management",
   },

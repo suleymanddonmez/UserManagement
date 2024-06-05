@@ -10,11 +10,11 @@ const loadIcon = (iconName) => {
   );
 };
 
-const Icon = React.memo(({ iconName, ...props }) => {
+const Icon = React.memo(({ iconName, size, ...props }) => {
   const IconComponent = useMemo(() => loadIcon(iconName), [iconName]);
   return (
     <Suspense fallback={<CircularProgress size={20} />}>
-      <IconComponent {...props} />
+      <IconComponent fontSize={size} {...props} />
     </Suspense>
   );
 });

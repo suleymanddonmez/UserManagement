@@ -32,14 +32,12 @@ export const DrawerHeader = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 
-const DrawerAppBar = styled(({ logoSrc, appTitle, appSubTitle, onClick, drawerOpen, ...otherProps }) => {
-  return (
-    <Box {...otherProps} onClick={onClick}>
-      <img src={logoSrc} title={appTitle} />
-      <ListItemText primary={appTitle} secondary={appSubTitle} />
-    </Box>
-  );
-})(({ theme, drawerOpen }) => ({
+const DrawerAppBar = styled(({ logoSrc, appTitle, appSubTitle, onClick, drawerOpen, ...otherProps }) => (
+  <Box {...otherProps} onClick={onClick}>
+    <img src={logoSrc} title={appTitle} />
+    <ListItemText primary={appTitle} secondary={appSubTitle} />
+  </Box>
+))(({ theme, drawerOpen }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -155,7 +153,15 @@ function Sidebar() {
                   >
                     <Icon iconName={item.iconName} />
                   </ListItemIcon>
-                  <ListItemText primary={item.text} sx={{ opacity: drawerOpen ? 1 : 0 }} />
+                  <ListItemText
+                    primary={item.text}
+                    secondary={item.subText}
+                    sx={{
+                      opacity: drawerOpen ? 1 : 0,
+                      ".MuiListItemText-primary": { lineHeight: "normal" },
+                      ".MuiListItemText-secondary": { fontSize: "0.7rem", lineHeight: "normal" },
+                    }}
+                  />
                 </ListItemButton>
               </ListItem>
             );

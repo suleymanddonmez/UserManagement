@@ -16,6 +16,10 @@ const theme = {
     //   dark: "#ba000d",
     //   contrastText: "#000",
     // },
+    background: {
+      paper: "#ffffff",
+      default: "#f7f6f6",
+    },
   },
   transitions: transitions,
   components: components,

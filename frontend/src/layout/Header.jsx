@@ -7,6 +7,7 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 
 //components
 import Icon from "../components/Icon";
@@ -16,6 +17,7 @@ import IconButtonMenu from "../components/IconButtonMenu";
 import { useSelector, useDispatch } from "react-redux";
 import { toggle as sidebarToggle, open as sidebarOpen } from "../store/SidebarSlice";
 import { userInfo, logout } from "../store/UserSlice";
+import { activeItem as activeMenuItem } from "../store/MenuSlice";
 
 function Header() {
   const navigate = useNavigate();
@@ -23,6 +25,9 @@ function Header() {
 
   //sidebar
   const drawerOpen = useSelector(sidebarOpen);
+
+  //menu
+  const selectedMenuItem = useSelector(activeMenuItem);
 
   //user
   const activeUserInfo = useSelector(userInfo);
@@ -36,12 +41,16 @@ function Header() {
           onClick={() => dispatch(sidebarToggle())}
           edge="start"
           sx={{
-            marginRight: 5,
+            marginRight: 1,
           }}
         >
           <Icon iconName={"Menu"} />
         </IconButton>
-        <Box sx={{ flexGrow: 1 }} />
+        <Box sx={{ flexGrow: 1 }}>
+          <Typography variant="h2" sx={{ fontSize: "1rem" }}>
+            {selectedMenuItem.text}
+          </Typography>
+        </Box>
         <Box sx={{ display: "flex" }}>
           <IconButtonMenu
             iconButtonProps={{
@@ -49,6 +58,7 @@ function Header() {
               edge: "start",
               color: "inherit",
               "aria-label": "account",
+              sx: { marginLeft: 1 },
             }}
             iconName={"AccountCircle"}
             items={[

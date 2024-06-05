@@ -17,13 +17,16 @@ import { isLoggedIn, logout } from "../store/UserSlice";
 import { setMode, mode } from "../store/ThemeSlice";
 import { open as sidebarOpen } from "../store/SidebarSlice";
 
+//components
+import Modal from "../components/Modal";
+
 //themes
 import darkTheme from "../themes/dark";
 import lightTheme from "../themes/light";
 
 export const Main = styled(Box, { shouldForwardProp: (prop) => prop !== "open" })(({ theme, open }) => ({
   flexGrow: 1,
-  p: 3,
+  padding: "20px",
   [theme.breakpoints.down("sm")]: {
     display: open && "none",
   },
@@ -60,10 +63,11 @@ function Layout() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Modal />
       <Box sx={{ display: "flex" }}>
         <Header />
         <Sidebar />
-        <Main component="main" sx={{ flexGrow: 1, p: 3 }} open={drawerOpen}>
+        <Main component="main" open={drawerOpen}>
           <DrawerHeader />
           <Outlet />
         </Main>
